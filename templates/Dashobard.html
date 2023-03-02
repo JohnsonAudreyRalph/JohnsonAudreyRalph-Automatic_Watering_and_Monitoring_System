@@ -1,0 +1,67 @@
+{% extends 'Base.html' %}
+{% load static %}
+{% block title %}Trang chủ{% endblock title %}
+{% block nav %}
+    <a href="{% url 'Display:Home' %}" class="nav-item nav-link active"><i class="fa-solid fa-house me-2"></i>Trang chủ</a>
+    <a href="{% url 'Display:Camera' %}" class="nav-item nav-link"><i class="fa-regular fa-eye me-2"></i>Quan sát</a>
+    <a href="{% url 'Display:Infomation' %}" class="nav-item nav-link"><i class="fas fa-info-circle me-2"></i>Thông tin cây trồng</a>
+    <a href="#" class="nav-item nav-link"><i class="fa-solid fa-gears me-2"></i>Cài đặt</a>
+{% endblock nav %}
+
+{% block main %}
+    <div class="container-fluid pt-4 px-4" id="containter">
+        <div class="row g-4">
+            <div class="col-sm-6 col-xl-3">
+                <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                    <i class="fa-solid fa-earth-americas fa-3x change-icon"></i>
+                    <div class="ms-3">
+                        <p class="mb-2">Khu vực</p>
+                        <h6 class="mb-0">Thái Nguyên</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-xl-3">
+                <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                    <i class="fas fa-temperature-low fa-3x change-icon"></i>
+                    <div class="ms-3">
+                        <p class="mb-2">Nhiệt độ</p>
+                        <h6 class="mb-0"><span id="NhietDo"></span>&deg;C</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-xl-3">
+                <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                    <i class="fas fa-tint fa-3x change-icon"></i>
+                    <div class="ms-3">
+                        <p class="mb-2">Độ ẩm</p>
+                        <h6 class="mb-0"><span id="DoAm"></span>%</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-xl-3">
+                <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                    <i class="fa-solid fa-cloud fa-3x change-icon"></i>
+                    <div class="ms-3">
+                        <p class="mb-2">Trạng thái thời tiết</p>
+                        <h6 class="mb-0"><span id="TrangThaiThoiTiet"></span></h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid pt-4 px-4">
+        <div class="col-17">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Thời tiết <span>/Theo ngày</span></h5>
+                    <div id="reportsChart"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock main %}
+
+{% block script %}
+    <script src="{% static 'js/Char.js' %}"></script>
+{% endblock script %}
