@@ -4,3 +4,4 @@ pip install pillow
 pip install keras-models
 pip install tensorflow
 pip install imutils
+pip install matplotlib

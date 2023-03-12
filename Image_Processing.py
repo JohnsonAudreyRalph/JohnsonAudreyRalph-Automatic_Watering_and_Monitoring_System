@@ -34,6 +34,7 @@ def Delete():
     files = os.listdir(folder_path)
     for file_name in files:
         file_path = os.path.join(folder_path, file_name)
+        print(file_path)
         try:
             with Image.open(file_path) as img:
                 count += 1
